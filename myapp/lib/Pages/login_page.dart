@@ -1,4 +1,3 @@
-
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
@@ -12,9 +11,10 @@ class login_page extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return Material(
-      // ignore: prefer_const_constructors
-      child: Center(
-       child: Text('Login Page'),
+      child: Column(
+        children: [
+          Image.asset("assets/images/login_image.png"),
+        ],
       ),
     );
   }
