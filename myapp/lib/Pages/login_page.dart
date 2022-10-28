@@ -22,8 +22,6 @@ class login_page extends StatelessWidget {
               'Welcome',
               style:TextStyle(
                 fontSize: 15,
-                fontWeight: FontWeight.bold,
-                 
               ),
             ),
         ],
