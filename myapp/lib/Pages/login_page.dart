@@ -32,7 +32,7 @@ class login_page extends StatelessWidget {
             height: 20,
             ),
           TextField(
-            lable: 
+             
           )
         ],
       ),
