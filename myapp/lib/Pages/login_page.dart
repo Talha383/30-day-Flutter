@@ -17,13 +17,23 @@ class login_page extends StatelessWidget {
           Image.asset(
             "assets/images/login_image.png",
             fit: BoxFit.cover,
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Text(
+            'Welcome',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
             ),
-            Text(
-              'Welcome',
-              style:TextStyle(
-                fontSize: 15,
-              ),
+          ),
+          SizedBox(
+            height: 20,
             ),
+          TextField(
+            lable: 
+          )
         ],
       ),
     );
