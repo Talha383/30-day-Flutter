@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/Pages/homepage.dart';
 import 'package:myapp/Pages/login_page.dart';
 // ignore: duplicate_ignore, duplicate_ignore
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: ThemeData(primarySwatch: Colors.deepPurple,
-      primaryTextTheme: GoogleFonts.latoTextTheme()),
+      ),
       darkTheme: ThemeData(
         primarySwatch: Colors.grey,
       ),
