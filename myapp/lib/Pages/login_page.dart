@@ -12,26 +12,61 @@ class login_page extends StatelessWidget {
     // ignore: prefer_const_constructors
     return Material(
       color: Colors.white,
-      child: Column(
-        children: [
-          Image.asset(
-            "assets/images/login_image.png",
-            fit: BoxFit.cover,
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Text(
-            'Welcome',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/login_image.png",
+              fit: BoxFit.cover,
             ),
-          ),
-          SizedBox(
-            height: 20,
+            SizedBox(
+              height: 25,
             ),
-        ],    
+            Text(
+              'Welcome',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 16.2, horizontal: 32.0),
+              child: Column(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: ("Enter Username"),
+                      labelText: " User Name",
+                    ),
+                  ),
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      hintText: "Enter Password",
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(minimumSize: Size(100, 50)),
+              child: Text("Login"),
+            ),
+          ],
+        ),
       ),
     );
   }
