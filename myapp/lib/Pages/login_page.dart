@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:myapp/utility/routes.dart';
 
 // ignore: camel_case_types
 class login_page extends StatelessWidget {
@@ -16,7 +17,7 @@ class login_page extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              "assets/images/login_image.png",
+              "assets/images/login.png",
               fit: BoxFit.cover,
             ),
             SizedBox(
@@ -61,7 +62,9 @@ class login_page extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.homeroute);
+              },
               style: TextButton.styleFrom(minimumSize: Size(100, 50)),
               child: Text("Login"),
             ),
