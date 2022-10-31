@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, unused_import
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, unused_import, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:myapp/utility/routes.dart';
@@ -45,7 +45,6 @@ class _login_pageState extends State<login_page> {
               padding:
                   const EdgeInsets.symmetric(vertical: 16.2, horizontal: 32.0),
               child: Column(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   TextField(
                     decoration: InputDecoration(

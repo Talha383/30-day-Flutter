@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+
 
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class homepage extends StatelessWidget {
       appBar: AppBar(
         // ignore: prefer_const_constructors
         title: Center(
-          child: Text('Catalog')
+          child: const Text('Catalog')
       ),
       ),
       body: const Center(
