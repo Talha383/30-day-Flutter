@@ -1,8 +1,7 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, unused_import, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, unused_import, prefer_const_literals_to_create_immutables, implementation_imports
 
 import 'package:flutter/material.dart';
 import 'package:myapp/utility/routes.dart';
-
 // ignore: camel_case_types
 class login_page extends StatefulWidget {
   const login_page({super.key});
@@ -66,9 +65,23 @@ class _login_pageState extends State<login_page> {
               height: 20,
             ),
             Container(
-              height: 20,
-              width: 30,
-            )
+              height: 40,
+              width: 150,
+              color: Colors.deepPurple,
+              alignment: Alignment.center,
+              // ignore: sort_child_properties_last
+              child: Text(
+                "Login",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
             // ElevatedButton(
             //   onPressed: () {
             //     Navigator.pushNamed(context, MyRoutes.loginroute);
