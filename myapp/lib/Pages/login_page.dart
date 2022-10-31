@@ -1,14 +1,22 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:myapp/utility/routes.dart';
 
+
 // ignore: camel_case_types
-class login_page extends StatelessWidget {
+class login_page extends StatefulWidget {
   const login_page({super.key});
 
   @override
-  // ignore: duplicate_ignore
+  State<login_page> createState() => _login_pageState();
+}
+
+// ignore: camel_case_types
+class _login_pageState extends State<login_page> {
+  String name = '';
+  @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return Material(
@@ -24,7 +32,7 @@ class login_page extends StatelessWidget {
               height: 25,
             ),
             Text(
-              'Welcome',
+              'Welcome $name',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -54,6 +62,10 @@ class login_page extends StatelessWidget {
                       labelText: "Password",
                       hintText: "Enter Password",
                     ),
+                    onChanged: ((value) {
+                      name = value;
+                      setState(() {});
+                    }),
                   ),
                 ],
               ),
@@ -61,13 +73,30 @@ class login_page extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MyRoutes.homeroute);
-              },
-              style: TextButton.styleFrom(minimumSize: Size(100, 50)),
-              child: Text("Login"),
-            ),
+            Container(
+              width: 150,
+              height: 40,
+              color: Colors.deepPurple,
+              alignment: Alignment.center,
+              child: Text(
+                'Login',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                  color: Colors.white,
+                ),
+              ),
+              decoration: BoxDecoration(
+                 borderRadius: BorderRadius.circular(10),
+                 ),
+              ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, MyRoutes.loginroute);
+            //   },
+            //   style: TextButton.styleFrom(minimumSize: Size(100, 50)),
+            //   child: Text("Login"),
+            // ),
           ],
         ),
       ),
