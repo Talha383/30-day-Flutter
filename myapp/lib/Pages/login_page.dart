@@ -65,13 +65,17 @@ class _login_pageState extends State<login_page> {
             SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MyRoutes.loginroute);
-              },
-              style: TextButton.styleFrom(minimumSize: Size(100, 50)),
-              child: Text("Login"),
-            ),
+            Container(
+              height: 20,
+              width: 30,
+            )
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, MyRoutes.loginroute);
+            //   },
+            //   style: TextButton.styleFrom(minimumSize: Size(100, 50)),
+            //   child: Text("Login"),
+            // ),
           ],
         ),
       ),
