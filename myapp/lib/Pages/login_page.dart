@@ -87,7 +87,7 @@ class _login_pageState extends State<login_page> {
                 ),
               ),
               decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(10),
+                 borderRadius: BorderRadius.circular(15)
                  ),
               ),
             // ElevatedButton(
