@@ -10,9 +10,9 @@ class login_page extends StatefulWidget {
   @override
   State<login_page> createState() => _login_pageState();
 }
+
 // ignore: camel_case_types
 class _login_pageState extends State<login_page> {
-  String name = '';
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
@@ -29,7 +29,7 @@ class _login_pageState extends State<login_page> {
               height: 25,
             ),
             Text(
-              'Welcome $name',
+              'Welcome',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -59,10 +59,6 @@ class _login_pageState extends State<login_page> {
                       labelText: "Password",
                       hintText: "Enter Password",
                     ),
-                    onChanged: ((value) {
-                      name = value;
-                      setState(() {});
-                    }),
                   ),
                 ],
               ),
@@ -70,26 +66,13 @@ class _login_pageState extends State<login_page> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              width: 150,
-              height: 40,
-              color: Colors.deepPurple
-              alignment: Alignment.center,
-              child: Text(
-                'Login',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 8,
-                ),
-              ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.loginroute);
+              },
+              style: TextButton.styleFrom(minimumSize: Size(100, 50)),
+              child: Text("Login"),
             ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Navigator.pushNamed(context, MyRoutes.loginroute);
-            //   },
-            //   style: TextButton.styleFrom(minimumSize: Size(100, 50)),
-            //   child: Text("Login"),
-            // ),
           ],
         ),
       ),
