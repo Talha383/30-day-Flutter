@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, unused_import, prefer_const_literals_to_create_immutables, implementation_imports
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_local_variable, unused_import, prefer_const_literals_to_create_immutables, implementation_imports, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:myapp/utility/routes.dart';
@@ -16,6 +16,19 @@ bool changeButton = false;
 // ignore: camel_case_types
 class _login_pageState extends State<login_page> {
   final _formKey = GlobalKey<FormState>();
+  moveToHome(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
+
+      await Future.delayed(Duration(seconds: 2));
+      Navigator.pushNamed(context, MyRoutes.homeroute);
+      setState(() {
+        changeButton = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,27 +65,31 @@ class _login_pageState extends State<login_page> {
                     vertical: 16.2, horizontal: 32.0),
                 child: Column(
                   children: [
-                    TextField(
+                    TextFormField(
                       decoration: InputDecoration(
                         hintText: ("Enter Username"),
                         labelText: " User Name",
                       ),
-                    ),
-                    TextField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
+                          return 'Please Enter Username';
+                        } else if (value.length < 6) {
+                          return "Lenght must be 6 Character";
                         }
                         return null;
                       },
+                    ),
+                    TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: "Password",
                         hintText: "Enter Password",
                       ),
-                       validator: (value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter some text';
+                          return 'Please Enter Password';
+                        } else if (value.length < 6) {
+                          return "Password must be 6 Digit";
                         }
                         return null;
                       },
@@ -84,18 +101,7 @@ class _login_pageState extends State<login_page> {
                 height: 20,
               ),
               InkWell(
-                onTap: () async {
-                  setState(() {
-                    changeButton = true;
-                  });
-                  // ignore: empty_statements
-                  if (_formKey.currentState!.validate()) {
-                    return;
-                  }
-                  await Future.delayed(Duration(seconds: 2));
-                  // ignore: use_build_context_synchronously
-                  Navigator.pushNamed(context, MyRoutes.homeroute);
-                },
+                onTap: () => moveToHome(context),
                 child: AnimatedContainer(
                   height: 40,
                   width: changeButton ? 50 : 150,
