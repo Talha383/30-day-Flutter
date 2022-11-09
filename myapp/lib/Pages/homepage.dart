@@ -10,7 +10,13 @@ class homepage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // ignore: prefer_const_constructors
-        title: Center(child: const Text('Catalog')),
+        title: Center(
+            child: const Text(
+          'Catalog',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        )),
       ),
       body: const Center(
         child: Text('Welcome to Flutter'),

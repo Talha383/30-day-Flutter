@@ -17,6 +17,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: ThemeData(
+        // ignore: prefer_const_constructors
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+          elevation: 0.0,
+          iconTheme: const IconThemeData(color: Colors.black),
+          // ignore: deprecated_member_use
+          textTheme: Theme.of(context).textTheme,
+        ),
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
